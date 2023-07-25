@@ -21,10 +21,15 @@ def get_brand(product):
     return product['manufacturer']
 
 def get_mrp(product):
-    return product['mrp']['formattedValue']
+    mrp=product['mrp']['formattedValue']
+    mrp_without_rupee= mrp.replace("₹", "")
+    return mrp_without_rupee
+
 
 def get_price(product):
-    return product['price']['formattedValue']
+    price=product['price']['formattedValue']
+    price_without_rupee= price.replace("₹", "")
+    return price_without_rupee
 
 def get_num_reviews(product):
     return product['numberOfReviews']
